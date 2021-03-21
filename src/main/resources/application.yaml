@@ -1,0 +1,28 @@
+server:
+  port: 7575
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: stockminator
+            client-secret: 3bacbdef-86e1-40fa-a4eb-605e76621fdb
+            clientName: Keycloak
+            authorization-grant-type: authorization_code
+            redirect-uri: "http://localhost:7575/login/oauth2/code/{registrationId}"
+            scope:
+              - openid
+              - profile
+              - email
+        provider:
+          keycloak:
+            authorization-uri: http://localhost:8080/auth/realms/stockminator/protocol/openid-connect/auth
+            token-uri: http://localhost:8080/auth/realms/stockminator/protocol/openid-connect/token
+            user-info-uri: http://localhost:8080/auth/realms/stockminator/protocol/openid-connect/userinfo
+            jwk-set-uri: http://localhost:8080/auth/realms/stockminator/protocol/openid-connect/certs
+            user-name-attribute: preferred_username
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/auth/realms/stockminator
