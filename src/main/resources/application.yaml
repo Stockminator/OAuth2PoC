@@ -8,7 +8,7 @@ spring:
         registration:
           keycloak:
             client-id: stockminator
-            client-secret: 3bacbdef-86e1-40fa-a4eb-605e76621fdb
+            client-secret: ee573bb6-07c0-4e54-9c23-273e68d07f97
             clientName: Keycloak
             authorization-grant-type: authorization_code
             redirect-uri: "http://localhost:7575/login/oauth2/code/{registrationId}"
@@ -18,11 +18,11 @@ spring:
               - email
         provider:
           keycloak:
-            authorization-uri: http://localhost:8080/auth/realms/stockminator/protocol/openid-connect/auth
-            token-uri: http://localhost:8080/auth/realms/stockminator/protocol/openid-connect/token
-            user-info-uri: http://localhost:8080/auth/realms/stockminator/protocol/openid-connect/userinfo
-            jwk-set-uri: http://localhost:8080/auth/realms/stockminator/protocol/openid-connect/certs
+            authorization-uri: http://localhost:4444/auth/realms/stockminator/protocol/openid-connect/auth
+            token-uri: http://localhost:4444/auth/realms/stockminator/protocol/openid-connect/token
+            user-info-uri: http://localhost:4444/auth/realms/stockminator/protocol/openid-connect/userinfo
+            jwk-set-uri: http://localhost:4444/auth/realms/stockminator/protocol/openid-connect/certs
             user-name-attribute: preferred_username
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8080/auth/realms/stockminator
+          issuer-uri: http://localhost:4444/auth/realms/stockminator
