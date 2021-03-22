@@ -1,11 +1,8 @@
 package com.example.demo;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.method.configuration.EnableReactiveMethodSecurity;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.web.server.SecurityWebFilterChain;
@@ -19,6 +16,7 @@ public class SecurityConfig {
         return http
                 .authorizeExchange()
 //                .pathMatchers("/login/oauth2/*").permitAll()
+//                .pathMatchers(HttpMethod.GET, "/hello/**").hasAuthority("resource_access_stockminator_roles_admin")
                 .pathMatchers(HttpMethod.GET, "/hello/**").hasAuthority("SCOPE_read")
 //                .pathMatchers(HttpMethod.POST, "/foos").hasAuthority("SCOPE_write")
                 .pathMatchers(HttpMethod.GET, "/bello/**").authenticated()
