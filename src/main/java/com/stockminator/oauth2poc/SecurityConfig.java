@@ -14,12 +14,13 @@ public class SecurityConfig {
     @Bean
     public SecurityWebFilterChain securitygWebFilterChain(ServerHttpSecurity http) {
         return http
+
                 .authorizeExchange()
 //                .pathMatchers("/login/oauth2/*").permitAll()
 //                .pathMatchers(HttpMethod.GET, "/hello/**").hasAuthority("resource_access_stockminator_roles_admin")
-                .pathMatchers(HttpMethod.GET, "/hello/**").hasAuthority("SCOPE_read")
+                .pathMatchers(HttpMethod.GET, "/hello/**").hasAuthority("ROLE_ADMIN")
 //                .pathMatchers(HttpMethod.POST, "/foos").hasAuthority("SCOPE_write")
-                .pathMatchers(HttpMethod.GET, "/bello/**").authenticated()
+                .pathMatchers(HttpMethod.GET, "/bello/**").hasAuthority("ROLE_USER")
                 .anyExchange().permitAll()
                 .and()
                 .oauth2Login()
