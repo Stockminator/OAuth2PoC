@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.stockminator.oauth2poc;
 
 public class Foo {
     private long id;

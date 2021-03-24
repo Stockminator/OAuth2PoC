@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.stockminator.oauth2poc;
 
 import java.nio.file.Files;
 import java.nio.file.Path;

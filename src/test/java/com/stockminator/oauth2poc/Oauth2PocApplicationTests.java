@@ -1,10 +1,10 @@
-package com.example.demo;
+package com.stockminator.oauth2poc;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DemoApplicationTests {
+class Oauth2PocApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.stockminator.oauth2poc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,8 +6,8 @@ import org.springframework.security.config.annotation.web.reactive.EnableWebFlux
 
 @EnableWebFluxSecurity
 @SpringBootApplication
-public class DemoApplication {
+public class Oauth2PocApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(Oauth2PocApplication.class, args);
 	}
 }

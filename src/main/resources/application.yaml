@@ -6,6 +6,7 @@ logging:
     org.springframework.security: DEBUG
 
 spring:
+  application.name: Oauth2Poc
   security:
     oauth2:
       client:
